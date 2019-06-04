@@ -24,9 +24,8 @@
   $(function (){
     $('form').submit(function(e){
       e.preventDefault()
-      $.post('/products', function(data){
-
-      }).done(function (data){
+      var values = $(this).serialize();
+      $.post('/products', values).done(function (data){
         $('#productTitle').text(data['name'])
         $('#productPrice').text(data['price'])
         $('#productPrice').text(data['description'])
