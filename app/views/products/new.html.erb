@@ -27,7 +27,9 @@
       $.post('/products', function(data){
 
       }).done(function (data){
-        $('#productTitle')
+        $('#productTitle').text(data['name'])
+        $('#productPrice').text(data['price'])
+        $('#productPrice').text(data['description'])
       })
     })
   })
